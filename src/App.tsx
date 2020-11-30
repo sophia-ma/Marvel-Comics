@@ -71,7 +71,7 @@ function App() {
             </header>
 
             <div className="container">
-                <div className="mb-4">{renderCharacters()}</div>
+                {renderCharacters()}
 
                 <div className="pagination">{renderPagination()}</div>
             </div>

@@ -1,10 +1,13 @@
-.characters-results {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+@import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
 
+.characters-results {
     &--loading {
         padding: 20px;
         text-align: center;
+    }
+
+    &__character-column {
+        max-width: 800px + $grid-gutter-width;
     }
 }

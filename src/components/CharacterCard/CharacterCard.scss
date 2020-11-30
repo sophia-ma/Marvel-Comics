@@ -1,15 +1,16 @@
 .character-card {
     text-align: center;
     cursor: pointer;
-    width: 800px;
-    height: 800px;
-    background-size: cover;
-    background-position: center;
     flex-shrink: 0;
+}
 
-    &:hover {
-        border: 1px solid rgba(#656262, 0.1);
-    }
+.character-card__image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    width: 100%;
+    padding-bottom: 100%;
 }
 
 .character-card__name {

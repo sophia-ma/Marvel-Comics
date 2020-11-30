@@ -17,8 +17,10 @@ export function CharactersResults(props: CharactersResultsProps): any {
 
     const characterCards = charactersResults.map((character, index) => {
         return (
-            <div key={index} className="mb-4">
-                <CharacterCard character={character} />
+            <div key={index} className="row justify-content-center mb-4">
+                <div className="col-sm-12 characters-results__character-column">
+                    <CharacterCard character={character} />
+                </div>
             </div>
         );
     });
