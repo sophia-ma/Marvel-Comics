@@ -4,11 +4,28 @@
 }
 
 .page-footer {
-    position: fixed;
+    // position: fixed;
     bottom: 0;
     background-color: #dcd9d9;
     color: #282c34;
     width: 100%;
-    padding: 0;
+    padding: 1rem;
     margin: 0;
+}
+
+.pagination {
+    flex-direction: row;
+    justify-content: center;
+
+    li {
+        padding: 0px 8px;
+    }
+
+    a {
+        color: #fff;
+
+        &.active {
+            color: #007bff;
+        }
+    }
 }
