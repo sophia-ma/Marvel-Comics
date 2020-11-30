@@ -1,20 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+
 import './App.scss';
+import { CharactersResults } from './components';
+import { Character, CharacterResponse } from './interfaces';
 
 function App() {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [copyright, setCopyright] = useState<string>('');
+    const [charactersResults, setCharactersResults] = useState<Character[]>([]);
+
+    useEffect(() => {
+        const starshipApiUrl = `https://gateway.marvel.com:443/v1/public/characters?ts=${process.env.REACT_APP_TIMESTAMP}&apikey=${process.env.REACT_APP_API_KEY}&hash=${process.env.REACT_APP_HASH}`;
+
+        setIsLoading(true);
+
+        fetch(starshipApiUrl)
+            .then((res) => res.json())
+            .then((response: CharacterResponse) => {
+                setIsLoading(false);
+                setCharactersResults(response.data.results);
+                setCopyright(response.copyright);
+
+                console.log(response.data.results);
+            })
+            .catch(() => {
+                setIsLoading(false);
+            });
+    }, []);
+
+    const renderCharacters = () => {
+        return <CharactersResults isLoading={isLoading} charactersResults={charactersResults} />;
+    };
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
+        <>
+            <header className="page-header">
+                <h2>Marvel Comics - Characters</h2>
             </header>
-        </div>
+
+            <div className="container">{renderCharacters()}</div>
+
+            <footer className="page-footer">
+                <p>Data provided by Marvel. {copyright}</p>
+            </footer>
+        </>
     );
 }
 
