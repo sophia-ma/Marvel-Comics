@@ -22,7 +22,7 @@ function App() {
             apikey: process.env.REACT_APP_API_KEY,
             hash: process.env.REACT_APP_HASH,
         };
-        console.log(params);
+
         const charactersApiCall = `https://gateway.marvel.com:443/v1/public/characters?ts=${params.ts}&apikey=${params.apikey}&hash=${params.hash}&offset=${offset}&limit=${limit}`;
 
         setIsLoading(true);

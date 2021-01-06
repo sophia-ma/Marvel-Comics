@@ -19,7 +19,7 @@ export function CharacterCard(props: CharacterCardProps): any {
                     backgroundImage: `url(${character.thumbnail.path}/detail.${character.thumbnail.extension})`,
                 }}
             ></div>
-            <div className="character-card__name">Name: {character.name}</div>
+            <div className="character-card__name">{character.name}</div>
         </div>
     );
 }

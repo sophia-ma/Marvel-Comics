@@ -17,10 +17,8 @@ export function CharactersResults(props: CharactersResultsProps): any {
 
     const characterCards = charactersResults.map((character, index) => {
         return (
-            <div key={index} className="row justify-content-center mb-4">
-                <div className="col-sm-12 characters-results__character-column">
-                    <CharacterCard character={character} />
-                </div>
+            <div key={index} className="col-sm-6 col-md-4 col-lg-3 characters-results__character-column justify-content-center mb-4">
+                <CharacterCard character={character} />
             </div>
         );
     });
@@ -39,9 +37,5 @@ export function CharactersResults(props: CharactersResultsProps): any {
         return <div className="characters-results characters-results--empty">No results</div>;
     }
 
-    return (
-        <div className="characters-results">
-            {characterCards}
-        </div>
-    );
+    return <div className="characters-results row">{characterCards}</div>;
 }
