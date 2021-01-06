@@ -1,3 +1,15 @@
+##  About
+This is a personal project built in React for learning purposes. It uses the Marvel Comics API.
+
+##  Built with
+- React
+- Typescript
+- Bootstrap
+
+##  Functionalities
+- Characters Display & Search (wip)
+- More details of each character in a new page
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
