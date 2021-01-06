@@ -7,8 +7,8 @@ This is a personal project built in React for learning purposes. It uses the Mar
 - Bootstrap
 
 ##  Functionalities
-- Characters Display & Search (wip)
-- More details of each character in a new page
+- Characters Display
+- More details of each character in a new page (wip)
 
 # Getting Started with Create React App
 
